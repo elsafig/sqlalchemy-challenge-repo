@@ -1,15 +1,16 @@
-# sqlalchemy-challenge-repo Requirements<br>
-Jupyter Notebook Database Connection (10 points)<br>
+# sqlalchemy-challenge-repo Requirements<br><br>
+_means completed_
+_Jupyter Notebook Database Connection (10 points)<br>
 To receive all points, you must<br>
 Use the SQLAlchemy create_engine() function to connect to your SQLite database (1 point)<br><br>
 
-Use the SQLAlchemy automap_base() function to reflect your tables into classes (3 points)<br><br>
+_Use the SQLAlchemy automap_base() function to reflect your tables into classes (3 points)<br><br>
 
-Save references to the classes named station and measurement (4 points)<br><br>
+_Save references to the classes named station and measurement (4 points)<br><br>_
 
-Link Python to the database by creating a SQLAlchemy session (1 point)<br><br>
+_Link Python to the database by creating a SQLAlchemy session (1 point)<br><br>_
 
-Close your session at the end of your notebook (1 point)<br><br>
+_Close your session at the end of your notebook (1 point)<br><br>___
 
 Precipitation Analysis (16 points)<br>
 To receive all points, you must<br>
