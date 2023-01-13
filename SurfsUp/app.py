@@ -21,11 +21,7 @@ Station = Base.classes.station
 #Set up Flask
 app = Flask(__name__)
 
-# @app.route("/api/v1.0/json-list")
-# def json_list():
-#     session = Session(engine)
-#     combined = 
-#     return jsonify()
+
 @app.route("/")
 def home():
     return (
@@ -79,34 +75,64 @@ def tobs():
         pop_tobs.append(tobs_dict)
     return jsonify(pop_tobs)
 
-@app.route("/api/v1.0/<start>")
-def start(start):
-    """Fetch min, max, and average temperatures calculated from the given start date to the end of the dataset, or a 404 if not."""
-    input_date = start
-    for 
-
-
-
-    session = Session(engine)
-    results = session.query(func.max(Measurement.tobs).label('max'),
-      func.min(Measurement.tobs).label('min'),
-      func.avg(Measurement.tobs).label('avg')).\
-    filter(Measurement.date>='2016-06-23').\
-    filter(Measurement.station == 'USC00519281')
+# @app.route("/api/v1.0/<start>")
+# def start(start):
+    # """Fetch min, max, and average temperatures calculated from the given start date to the end of the dataset, or a 404 if not."""
+    # session = Session(engine)
+    # complete_data = session.query(Measurement.date, Measurement.tobs)
+    # total_data=[]
     
-    canonicalized = start.replace(" ", "").lower()
-    for date in results:
-        search_term = character["real_name"].replace(" ", "").lower()
+    # for date, tobs in complete_data:
+    #     data_dict = {}
+    #     data_dict["date"] = date
+    #     data_dict["tobs"] = tobs
+    #     total_data.append(data_dict)
+    #     jsonify(total_data)
+    
+    # input_date = start
 
-        if search_term == canonicalized:
-            return jsonify(character)
+    # selected_data =[]
+    # for date in total_data:
+    #     if start >= date:
+    #         start_dict = {}
+    #         data_dict["date"] = date
+    #         data_dict["tobs"] = tobs
+    #         total_data.append(data_dict)
+    #         jsonify(selected_data)
+        #  return jsonify({"Results:" f"Min: {func.min(Measurement.tobs)}</br>Max: {func.max(Measurement.tobs)}</br>Avg: {func.avg(Measurement.tobs)}"})
 
-    return jsonify({"error": f"Character with real_name {real_name} not found."}), 404
+   # return jsonify({"error": f"Date {start} not found."}), 404
 
-@app.route("/api/v1.0/<start>/<end>")
-def start(start, end):
+# @app.route("/api/v1.0/<start>/<end>")
+# def start(start, end):
+    # session = Session(engine)
+    # complete_data_end = session.query(Measurement.date, Measurement.tobs)
+    # total_data_end=[]
+        
+    # for date, tobs in complete_data_end:
+    #         data_dict_end = {}
+    #         data_dict_end["date"] = date
+    #         data_dict_end["tobs"] = tobs
+    #         total_data_end.append(data_dict_end)
+    #         jsonify(total_data_end)
+        
+    # input_start = start
+    # input_end = end
+    # selected_data =[]
+    # for date in total_data_end:
+    #         if input_start >= date:
+    #             if input_end<=date:
+    #                 start_dict = {}
+    #                 data_dict_end["date"] = date
+    #                 data_dict_end["tobs"] = tobs
+    #                 selected_data.append(data_dict_end)
+    #                 jsonify(selected_data)
+            # return jsonify({"Results:" f"Min: {func.min(Measurement.tobs)}</br>Max: {func.max(Measurement.tobs)}</br>Avg: {func.avg(Measurement.tobs)}"})
+    #         return jsonify({"error": f"Date {input_end} not found."}), 404
+   # return jsonify({"error": f"Date {input_start} not found."}), 404
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
+        app.run(debug=True)
 
 
